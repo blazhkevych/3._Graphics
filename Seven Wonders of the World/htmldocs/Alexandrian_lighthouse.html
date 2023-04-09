@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		dt {
+			text-align: center;
+			font-family: Georgia, serif;
+			font-size: 34px;
+			font-weight: bold;
+			line-height: 1.5;
+			color: #000;
+			margin-bottom: 10px;
+		}
+
+		dd {
+			text-align: justify;
+			font-family: Georgia, serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #000;
+			margin-right: 40px;
+		}
+
+		body {
+			background-color: #ffffff;
+			font-family: Georgia, serif;
+			font-size: 16px;
+			line-height: 1.5;
+
+		}
+
+		img {
+			float: right;
+			margin: 5px;
+			border: 3px solid rgb(0, 0, 0);
+
+		}
+
+		h1 {
+			text-align: center;
+			font-family: Georgia, serif;
+			font-size: 34px;
+			line-height: 1.5;
+			color: #000;
+			margin-bottom: 10px;
+		}
+
+		/* CSS стили для слайдера */
+		.slider {
+			width: 100%;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.slider img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-height: 100%;
+			max-width: 100%;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+
+		.slider img.active {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<dl>
+		<dt>
+			Александрийский маяк </dt>
+		<dd>
+			<div class="slider">
+				<img src="../img/heops/1.jpg" alt="Slide 1">
+				<img src="../img/heops/2.jpg" alt="Slide 2">
+				<img src="../img/heops/3.jpg" alt="Slide 3">
+				<img src="../img/heops/4.jpg" alt="Slide 4">
+				<img src="../img/heops/5.jpg" alt="Slide 5">
+			</div>
+			<span style="font-weight: bold;">Александри́йский маяк</span> (известен также как <span
+				style="font-weight: bold;">Фарóсский маяк</span>, др.-греч. ὁ Φάρος τῆς Ἀλεξανδρείας, ho pʰá.ros teːs
+			a.lek.sandréːaːs) — маяк на острове Фарос около египетского города Александрии, одно из семи чудес света.
+
+			Был построен во время правления Птолемея II Филадельфа (280—247 году до н. э.). Высота маяка составляла порядка
+			120—150 метров. На протяжении многих веков он был одним из самых высоких искусственных сооружений в мире, а также
+			входил в число трёх из Семи чудес древности, сохранявшихся дольше всего (наряду с сохранившейся до настоящего
+			времени пирамидой Хеопса и Галикарнасским мавзолеем, просуществовавшим в разрушенном виде до 1494 года).
+			Александрийский маяк был единственным из Семи чудес, имевшим практическое предназначение. Прежде всего, он давал
+			возможность кораблям без проблем заплывать в порт Александрии, имевший важное стратегическое значение; кроме того,
+			он служил дополнительным ориентиром морякам на фоне однообразного египетского побережья и, наконец, служил
+			наблюдательным пунктом для наблюдения за водными просторами (военная угроза Александрии исходила в основном с
+			моря, поскольку с суши город защищала пустыня).
+
+			Маяк был сильно поврежден в результате землетрясений в период 796—1323 годов нашей эры, остатки его конструкции
+			частично сохранялись до 1480 года, после чего были использованы для строительства цитадели Кайт-Бей на этом месте.
+
+			В 1994 году французские археологи обнаружили фрагменты маяка на дне Александрийской восточной гавани. В 2016
+			году Министерство по делам древностей Египта объявило о намерении превратить подводные руины древней Александрии,
+			включая Фарос, в подводный музей.
+		</dd>
+	</dl>
+
+	<script>
+		// JavaScript код для слайдера
+		const sliderImages = document.querySelectorAll('.slider img');
+		let currentIndex = 0;
+		setInterval(() => {
+			sliderImages[currentIndex].classList.remove('active');
+			currentIndex = (currentIndex + 1) % sliderImages.length;
+			sliderImages[currentIndex].classList.add('active');
+		}, 3000);
+	</script>
+
+</body>
+
+</html>
